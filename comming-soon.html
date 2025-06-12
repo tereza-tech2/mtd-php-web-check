@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+     
+    <style>
+        .bodycl{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+            display: flex;
+        }
+        i {
+          border: solid white;
+          border-width: 0 3px 3px 0;
+          display: inline-block;
+          padding: 3px;
+        }
+        .right {
+          transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+        }
+        .hov:hover {
+            opacity: 0.8;
+            cursor: pointer;
+        }
+        .soon-l {
+            position: relative;
+            top:50%;
+            width: 50%;
+            min-width: 700px;
+            height: 45%;
+            padding-left: 150px;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+        }
+        .soon-r {
+            display: inline-block;
+            height: 100%;
+            width: 50%;
+        }
+        @media only screen and (max-width: 2200px) {
+            body{
+                width:100%;
+                height:100%;
+                margin:0px;
+                padding:0px;
+                position: absolute;
+                top:0px;
+            }
+            .soon-l {
+                position: relative;
+                top:50%;
+                min-width: 700px;
+                height: 45%;
+                padding-left: 150px;
+                display: inline-block;
+                width:100%;
+                color: white;
+            }
+            .soon-r {
+                display: inline-block;
+                height: 100%;
+                width:100%;
+                position: absolute;
+                top: 0px;
+                z-index: -10;
+            }
+        }
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+</head>
+<body class="bodycl">
+    <div style="position: absolute; left: 30px; top:50px; width: 15%; height: auto; min-width: 300px">
+        <img src="media/grafika/pics/Favicon_MT-Distributing_300px.png" style="width: 100%; height: auto; object-fit: cover">
+    </div>
+    <a class="soon-l" href="index.html">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 60px; line-height: 1.1; font-weight: 100; margin-bottom: 0px">COMING SOON</h1>
+        <p style="font-family: 'Playfair Display', serif; font-size: 30px; line-height: 1.1; font-weight: 100; color: darkgray; margin-top: 10px">Database is currently being uploaded</p>
+        <div class="hov" style="width: 50%; height: 90px; background-color: darkslategray; margin-top: 60px; display: flex;"><div style="width: 15px; height: 90px; background-color: slategray; position: relative; left: -15px; display: inline-block"></div><div style="display: inline-block; width: 100%; padding-top: 0px; color: white"><p style="width: 95%; height: 100%; display: inline-block; font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 100">Return to main page</p><p style="display: inline-block; width: 5%"><i class="arrow right"></i></p></div></div>
+    </a>
+    <div class="soon-r">
+        <img src="media/grafika/pics/slider_design-sound.jpg" style="object-fit: cover; width: 100%; height: 100%">
+    </div>
+    
+
+<script>
+    
+</script>
+</body>
+</html>

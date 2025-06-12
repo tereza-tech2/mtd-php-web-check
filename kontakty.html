@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Kontakty">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link rel="import" href="header.html">
+    <link rel="import" href="header-medium.html">
+    <link rel="import" href="header-small.html">
+    <link rel="import" href="footer.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+         
+    </script> 
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+            display: inherit!important;
+        }
+        .column {
+            padding-top: 50px;
+            padding-left:50px;
+            line-height: 1em;
+            
+        }
+        .column > h2 {
+            margin-top:90px;
+        }
+       
+        body > div:nth-child(2) > div.column > p{margin:0px;}
+        body > div:nth-child(2) > div.column > p:nth-child(3){line-height: 1.5em;}
+        h4{padding-top: 20px;}
+        
+    </style>
+</head>
+<body style="width:100%" onload="loadOn(); respOn(); mapDown()" onresize="loadOn(); respOn(); mapDown()">
+    <div id="header"><p style="display:none">Zastupované značky</p></div>
+    
+    <div id="map-grid" style="width:80%; border: 1px solid lightgray; margin-top:none; margin: 0px auto 0px auto; font-size: 23px; font-weight: 100; padding: 30px; ">
+        <div class="column">  
+            <h1 style="margin-bottom: 120px;">Vyhledávání</h1>
+            <h2>Adresa</h2>
+            <p>(kanceláře, showroom, sklady):</br>Brigádníků 2/44, Strašnice</br>Praha 10, 100 00</p>
+            <h3>tel.: +420 777 253 713</h3>
+            <h3>email: info@mtdistributing.cz</h3>
+            <h2>Fakturační adresa:</h2>
+            <p>Narcisová 428</p></br><p>252 43 Průhonice</p>
+            <h2>Fakturační údaje:</h2>
+            <p>IČ: 27224961</p></br><p>DIČ: CZ27224961</p></br><p>IBAN: CZ1601000000354203210217</p></br><p>SWIFT: KOMBCZPPXXX</p>
+        </div>
+        <div style="background-image: url(media/grafika/pics/line-shdw.jpg); background-repeat:no-repeat; background-size: 90px 1200px; background-position: -50px -80px">
+            <div style="padding: 0px 4% 80px 38px;">
+                <div class="column">
+                    <h3>Mapa</h3>
+                </div>
+                <div style="width:100%; height:800px; background-color: dimgrey; color:white">
+                    <!--div id="map" style="width:100%;height:100%;"></div-->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1045.9580903136646!2d14.496108278049228!3d50.07472660279287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b93386870e421%3A0x3ce961f9847ea6db!2sMT%20Distributing!5e0!3m2!1scs!2scz!4v1588163114719!5m2!1scs!2scz" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ix-footer" style="width: 100%; height: auto; background-color: #101030"></div>
+    <div id="this_page" style="display: none; height: 0px; width: 0px">Kontakty</div>
+<script src="responsive.js"></script>
+<script>
+    function myMap() {
+        var mapCanvas = document.getElementById("map");
+        var mapOptions = {
+            center: new google.maps.LatLng(51.5, -0.2),
+            zoom: 10
+        };
+        var map = new google.maps.Map(document.getElementById("map"),mapOptions);
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtdEx0QWN2F6JlGCPo3xhigUMICp9Oxgw&callback=myMap"></script>
+</body>
+</html>

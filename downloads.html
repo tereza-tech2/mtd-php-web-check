@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="import" href="header.html">
+    <link rel="import" href="header-medium.html">
+    <link rel="import" href="header-small.html">
+    <link rel="import" href="footer.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+     
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+        }
+        .flea {
+            width:22%;
+            height: 375px;
+            margin: 2% 1%;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 130px!important;
+            border: none!important;
+        }
+        .flea-h {
+            background-image: linear-gradient(white,lightgray);
+            box-shadow: 10px 20px 5px #888888;
+        }
+        .side-line {
+            background-size: 50px 71%!important;
+        }
+        
+        #that>div{
+            margin: 2%;
+            margin-bottom: 15%;
+        }
+        .dnl{
+            width:80%; margin: 0px auto 0px auto; font-size: 19px; font-weight: 100; padding: 32px; display:grid; grid-template-columns: 80% 20%;
+        }
+        .dnl-small{
+            width:80%; margin: auto; font-size: 19px; font-weight: 100; padding: 32px; display:block;;
+        }
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script>
+    
+        
+    </script>
+</head>
+<body style="width:100%" onload="setWidth(); loadOn(); respOn(); getName();" onresize="setWidth(); loadOn(); respOn(); getName();">
+    <div id="header"></div>
+    <div id="side-dvid">
+            <!--div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; ">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div>
+            <div class="my-c-1" style="display: grid; grid-template-rows: 97% 1% 2%; width:270px;">
+                <div class="my-c-2" style="background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                <img class="my-c-3" src="media/grafika/pics/shadow-1.png">
+                <p>Produktový list</br><b>Symbio Design Samurai</b></p>
+            </div-->
+        <div style="margin-bottom: 200px">
+            <div id="that">
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MediaTrading-Samurai_A4_CZ_032016_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Samurai_A4_CZ_032016.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Produktový list<b></br>Symbio Design Samurai</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MediaTrading-WaveGuide_A4_CZ_032016_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-WaveGuide_A4_CZ_032016.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Produktový list<b></br>WaveGuide</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MediaTrading-Cube_A4_CZ_032016_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Cube_A4_CZ_032016.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Produktový list<b></br>Cube</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MT_Speakerguard_A4_CZ_052012_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Speakerguard_A4_CZ_052012.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Leták<b></br>Speakerguard</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MT_Invisibass_A4_CZ_052014_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Invisibass_A4_CZ_052014.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Leták<b></br>Subwoofer Invissibass</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MT_Loader_A4_CZ_042012_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-Loader_A4_CZ_042012.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Leták<b></br>Loader</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MediaTrading-MLAudio_A4_CZ_042014_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-MLAudio_A4_CZ_042014_web-1.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Leták<b></br>Neviditelné reproduktory</b></p>
+                </div>
+                <div class="my-class" style="width:20%; height: 500px; display: inline-block"><a href="media/grafika/pics/PDF/PDF-letaky/Letak_MediaTrading-ZonarSound_A4_CZ_042014_web.pdf">
+                    <div style="height:600px; background-color: aliceblue;background-image: url(media/grafika/pics/PDF/Letak_MediaTrading-ZonarSound_A4_CZ_042014.jpg); background-size: cover;"></div>
+                    <img style="width:100%" src="media/grafika/pics/shadow-1.png"></a>
+                    <p>Leták<b></br>Zonar Sound</b></p>
+                </div>
+            </div>
+        </div>
+
+    
+        <div id="side"></div>
+    </div>
+<div id="ix-footer" style="width: 100%; height: auto; background-color: #101030"></div>
+<div id="this_page" style="display: none; height: 0px; width: 0px">Downloads</div>
+<script src="responsive.js"></script> 
+
+</body>
+</html>

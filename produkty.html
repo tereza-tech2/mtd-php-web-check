@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Produkty">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link rel="import" href="header.html">
+    <link rel="import" href="header-small.html">
+    <link rel="import" href="catalog-body.html">
+    <link rel="import" href="catalog-main.html">
+    <link rel="import" href="catalog-product-skelton.html">
+    <link rel="import" href="categories.html">
+    <link rel="import" href="product-list.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+     
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+        }
+        .flea {
+            height: 375px;
+            margin: 2% 1%;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 130px!important;
+            border: none!important;
+            font-size:26px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+        .half{width:44%;}
+        .quart{width:22%;}
+        .flea-h {
+            background-image: linear-gradient(white,lightgray);
+            box-shadow: 10px 20px 5px #888888;
+        }
+        .side-line {
+            background-size: 50px 1200px!important;
+        }
+        .auto {
+            margin-top: 10px;
+            margin-top:-7px;
+            line-height: 1em;
+            height:30px;
+            padding-bottom: 8px;
+            box-shadow: 1px 12px 16px -11px darkslateblue;
+        }
+        .h5 {
+            margin-top: 8px;
+            height:45px;
+            padding-top:8px;
+        }
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        document.getElementByI(function(){
+            var a = window.innerWidth;
+            if (a<1850){
+                document.getElementByI("#header").load("header-underline-menu.html");
+                document.getElementByI("#side").load("side.php");
+            } else{
+                document.getElementByI("#header").load("header.html");
+                document.getElementByI("#side").load("side.php");
+            }
+            
+        });
+        
+    </script>
+</head>
+<body style="width:100%" onload="givePadding(); loadOn(); respOn()" onresize="givePadding(); loadOn(); respOn()">
+    <div id="header"><p style="display:none">Produkty</p></div>
+    <div class="no-dph">Všechny ceny jsou uvedeny bez DPH</div>
+    <div id="side-dvid" style="padding-top: 0px!important">
+        <div id="place" style="font-size: 19px; font-weight: 100; padding: 32px; margin-bottom: 200px; padding-top: 0px">
+            <div style="margin-bottom: 0px!important; height: 60px; width: 100%; overflow: auto">
+                <div style="float: left; padding-top: 20px; font-size: 25px">Zobrazeno 14 výsledků.</div>
+                <form style="float: right; display: block;">
+                    <select name="order" class="order-box">
+                        <option value="default" selected="selected">Výchozí třízení</option>
+                        <option value="popular">Seřadit podle oblíbenosti</option>
+                        <option value="newest">Seřadit od nejnovějších</option>
+                        <option value="price_min">Seřadit podle ceny: od nejlevnějšího</option>
+                        <option value="price_max">Seřadit podle ceny: od nejdražšího</option>
+                    </select>
+                </form>
+            </div>
+            <div id ="computed-body">
+                <a class="flea quart parent-1" id="" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/jvc_dla-vs4500_02-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Projektory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">14 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart parent-2" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/newtec_cambio-16_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">60 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-1" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/novasonar-gk-30-mini_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Neviditelné reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">15 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart parent-4" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/zonar-dcla100_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Zesilovače</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">10 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/zonar-dlouhy-smerovy-reproduktor-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Směrové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">7 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/halcro-ec800_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>DVD přehrávače</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">1 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/symbio-oblak_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Svítidla</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">7 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/symbio-beta_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Regálové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/symbio-samurai_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Podlahové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/newtec_cono-pendo-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Stropní reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">36 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/newtec_cono-solo-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Nástěnné reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">22 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/symbio-alfa_08-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Designové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">27 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/symbio-kotrmelec_02-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Designové doplňky</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/speakerguard-psp-23i-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Příslušenství pro reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">14 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/newtec_subwoofer-wifi-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Subwoofery</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">5 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/invisibass-II-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Neviditelné subwoofery</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/rti_licence_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>RTI</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">12 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/rti_t3x_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Dálková ovládání</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/rti_cx7_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Ovládací panely</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart" href="#">
+                    <div class="flea-box">
+                        <img src="media/grafika/pics/products/znacky_obrazek_optrocon-570x570.png" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Kabely</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">11 item(s)</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="side"></div>
+    </div>
+    
+    <div id="ix-footer" style="width: 100%; height: auto; background-color: #101030"></div>
+    <div id="catalog" style="display: none"></div>
+    <div id="catalog-main" style="display: none">
+    <div id="this_page" style="display: none; height: 0px; width: 0px">Produkty</div>  
+    
+<script src="responsive.js"></script>
+<script src="search_script.js"></script>
+<script src="seznamLst.js"></script>
+
+<script>
+    function givePadding(){
+        var a = document.getElementsByClassName("flea-h");
+        var b = a.length;
+        for(var i=0; i<b; i++){
+            var c = a[i].firstElementChild;
+            var d = c.firstElementChild;
+            var e = d.clientHeight;
+            var f = document.getElementById("header").clientWidth;
+            var g = document.getElementsByClassName("flea");
+            if (f>1500){
+                g[i].classList.remove("quart");
+                g[i].classList.add("half");
+            } else{g[i].classList.add("quart");g[i].classList.remove("half");}
+            if(e>26){
+                d.style.position="relative";
+                d.style.bottom="25px";
+            } else{
+                d.style.position="inherit";
+                d.style.bottom="0px";}
+        }
+        
+    }
+</script>
+<!--script>
+    document.getElementByI("#catalog").load("catalog-body.html");
+    document.getElementByI("#catalog-main").load("catalog-main.html");
+    var e = document.getElementsByClassName("flea").length;
+    for (var w=0;w<e;w++){document.getElementsByClassName("flea")[w].addEventListener("click", seznamScript)}
+    /*var ee = document.getElementsByClassName("cg").length;
+    for (var ww=0;ww<ee;ww++){document.getElementsByClassName("cg")[ww].addEventListener("click", seznamScript);};*/
+    
+    function seznamScript(){
+        document.getElementByI("#computed-body").empty();
+        var tid=this.classList;
+        if (this.hasClass=="category-"+[0,1,2,3,4,5,6,7,8,9]||"category-"+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]||"category-"+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]){
+            var szln = document.getElementById("id-seznam").childElementCount;
+            for (var tz = 0; tz < szln; tz++){
+                var cgln = document.getElementById("id-seznam").children[tz];
+                var idln = document.getElementById(cgln.id).childElementCount;
+                var hedEr = document.createElement("P");
+                hedEr.className = "separator";
+                hedEr.innerHTML = cgln.getAttribute("value");
+                if (z>3) {
+                    document.getElementById("computed-body").appendChild(hedEr);
+                } else {}
+                for (var z = 0; z < idln; z++){
+                    var childln = document.getElementById(cgln.id).children[z].getElementsByClassName("category-1").length;
+                    for (var tc = 0; tc<childln; tc++){
+                        var thisid = document.getElementById(cgln.id).children[z].getElementsByClassName("category-1")[tc];
+                        
+                        var imgS = document.getElementById("catalog-main-"+thisid.id).getElementsByClassName("product-images")[0].children[0].src;
+                        var HTML = document.getElementById("catalog-main-"+thisid.id).getElementsByClassName("product-header")[0].innerHTML;
+                        var priceStr = document.getElementById("catalog-main-"+thisid.id).getElementsByClassName("product-price")[0].innerHTML.toString();
+                        var productPrice = priceStr.replace("&nbsp;"," ");
+                        var child = document.createElement("A");
+                        child.className="flea quart";
+                        child.href="#";
+                        child.id=document.getElementById(cgln.id).children[z].getElementsByClassName("category-1")[tc].id;
+                        /*child.onclick = getClick(this);*/
+                        createList();
+                    }
+                }
+            }
+        }
+            
+        
+        if (this.hasClass=="parent-"+[0,1,2,3,4,5,6,7,8,9]||"parent-"+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]||"parent-"+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]+[0,1,2,3,4,5,6,7,8,9]){
+            var rr = tid.length;
+            var c = tid.item(rr-1);                    
+            var sc = c.toString();
+            var d = document.getElementById(sc);
+            var ln = d.childElementCount;
+            var f = document.getElementById("catalog-main");
+            var headEr = document.createElement("P");
+            headEr.className = "separator";
+            
+            for (var s = 0; s < ln; s++){
+                
+                var xlu = d.childNodes[s].childElementCount;
+                var cec = document.getElementById(sc+"-u-"+[s+1]).childElementCount;
+                var dd = document.getElementById(sc+"-u-"+[s+1]);
+                var cec = dd.childElementCount;
+                var inht = dd.innerHTML;
+                var splht = inht.split(" ");
+                var head = splht[0];
+                headEr.innerHTML=head;
+                if (cec>1) {
+                    document.getElementById("computed-body").appendChild(headEr);
+                } else {}
+                
+                for (var k = 0; k <cec; k++) {
+                    if (typeof xlu!=="undefined"){
+                        x=k+xlu;
+                    } else{x=k}
+                    var HTML = document.getElementByI("#"+sc+"-u-u-"+[x+1]).val();
+                    var ths = document.getElementByI("#"+sc+"-u-u-"+[x+1]);
+                    var price = document.getElementByI("div.product-price");
+                    var priceStr = price[x].innerHTML.toString();
+                    var productPrice = priceStr.replace("&nbsp;"," ");
+                    var imag = document.getElementByI("img.main-image");
+                    var imgS = imag[x].src;
+                    var child = document.createElement("A");
+                    var clss = document.getElementByI("#"+sc+"-u-u-"+[x+1]).attr("class");
+                    child.className="flea quart " + clss;
+                    child.href="#";
+                    child.id=sc+"-u-u-"+[x+1];
+                    /*child.onclick = getClick(this);*/
+                    createList();
+                }
+            }
+        }
+        function createList() {
+            var childU = document.createElement("DIV");
+            childU.className="flea-box";
+            var childUp = document.createElement("IMG");
+            childUp.src=imgS;
+            childUp.style.width="100%";
+            var childUp2 = document.createElement("DIV");
+            childUp2.className="flea-h";
+            var childUp2u1 = document.createElement("DIV");
+            childUp2u1.className="auto";
+            childUp2u1.innerHTML=HTML;  
+            var childUp2u2 = document.createElement("H5");
+            childUp2u2.className = "h5";
+            childUp2u2.innerHTML = productPrice;
+            child.appendChild(childU);
+            childU.appendChild(childUp);
+            child.appendChild(childUp2);
+            childUp2.appendChild(childUp2u1);
+            childUp2.appendChild(childUp2u2);
+            document.getElementById("computed-body").appendChild(child);
+        }
+        
+    }
+    
+</script-->
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
+        <script src="airtable/airtable.browser.js"></script>
+        <style>
+            .air-img {widows: 300px; height: 215px;}
+        </style>
+    </head>
+    <body>
+        <h1>Katalog</h1>
+        <div id="katalog"></div>
+
+        <hr/>
+        <button id='create'>Create</button>
+        <div id="created"></div>
+    </body>
+
+
+    <script>
+var Airtable = require('airtable');
+// Get a base ID for an instance of art gallery example
+var base = new Airtable({ apiKey: 'key3kOt1aJ3uyzQYX' }).base('appnCdpmVNMgcpvw8');
+
+/*var deleteKatalog = function(record) {
+    record.destroy(function(err) {
+        if (err) {
+            console.log('Error destroying ', recordId, err);
+        } else {
+            console.log('Destroyed ', record.getId());
+            $('div[data-record-id="'+record.getId()+'"]').remove();
+        }
+    });
+};*/
+
+var loadKatalog = function(znacka, kategorie) {
+    $('#katalog').empty();
+
+    base('Katalog').select({
+        /*sort: [
+            {field: 'Nazev', direction: 'asc'}
+        ]*/
+    }).eachPage(function page(records, fetchNextPage) {
+        var n = 1;
+        records.forEach(function(record) {
+            if (znacka !== 'null') {
+                var $katalogInfo = $('<div id="' + 
+                                     
+                n +'">');
+                $katalogInfo.append($('<h3>').text(record.get('Nazev')));
+                /*$katalogInfo.append($('<div>').text(record.get('Price')));
+
+                var imgUrls = JSON.stringify(record.get('Obrazek_Hlavni'));
+                if(typeof imgUrls !== "undefined")
+                {
+                  var count = ((imgUrls.match(/,/g) || []).length);
+                  for (var i = 0; i < (count/14); i++) {
+                      var src_src = imgUrls.split(",")[(i*14)+1];
+                      var src_sr = src_src.replace('"url":"', "").replace('"', '');
+                      $katalogInfo.append($('<img class="air-img">').attr('src', src_sr));
+
+                  }
+                }
+                $katalogInfo.append($('<div>').text(record.get('Znacka')));
+                $katalogInfo.append($('<div>').text(record.get('Kategorie')));
+                /*var x = $('<button>').text('Delete').click(function() {
+                    deleteKatalog(record);
+                });
+                $katalogInfo.append(x)*/
+                $katalogInfo.attr('data-record-id', record.getId());
+
+                $('#katalog').append($katalogInfo);
+                
+            } else if (kategorie !== 'null') {
+                
+                
+            }
+            n = n+1;
+        });
+
+        fetchNextPage();
+    }, function done(error) {
+        console.log(error);
+    });
+};
+
+/*$('#create').click(function(){
+    base('Katalog').create({
+        "Name": "Al Held",
+        "Bio": "Al Held began his painting career by exhibiting Abstract Expressionist works in New York; he later turned to hard-edged geometric paintings that were ...",
+        "Genre": [
+            "American Abstract Expressionism",
+            "Color Field"
+        ],
+        "On Display?": true
+    }, function(err, record) {
+        if (err) { console.log(err); return; }
+        loadKatalog();
+    });
+});*/
+
+loadKatalog('eiki', 'reproduktory');
+
+</script>
+</html>

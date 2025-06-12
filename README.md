@@ -1,1 +1,0 @@
-# mtd-php-web-check

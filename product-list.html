@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Produkty">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link rel="import" href="header.html">
+    <link rel="import" href="header-small.html">
+    <link rel="import" href="catalog-body.html">
+    <link rel="import" href="catalog-main.html">
+    <link rel="import" href="catalog-product-skelton.html">
+    <link rel="import" href="categories.html">
+    <link rel="import" href="product-list.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+     
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+        }
+        /*.flea {
+            height: 375px;
+            margin: 2% 1%;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 130px!important;
+            border: none!important;
+            font-size:26px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }*/
+        //.half{width:44%;}
+        ///.quart{width:22%;}
+        .flea-h {
+            background-image: linear-gradient(white,lightgray);
+            box-shadow: 10px 20px 5px #888888;
+        }
+        .side-line {
+            background-size: 50px 1200px!important;
+        }
+        .h5 {
+            margin-top: 8px;
+            height:45px;
+            padding-top:8px;
+        }
+        #setts{display:none};
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        
+    </script>
+</head>
+<body style="width:100%" onload="givePadding(); loadOn(); winWidth()" onresize="loadOn(); winWidth()">
+    <div id="header"><p style="display:none">Produkty</p></div>
+    <div class="no-dph">Všechny ceny jsou uvedeny bez DPH</div>
+    <div id="side-dvid" style="padding-top: 0px!important">
+        <div id="place" style="font-size: 19px; font-weight: 100; padding: 32px; margin-bottom: 200px; padding-top: 0px">
+            <div id="setts">
+                <div style="margin:15px"><p style="display:inline">Zobrazeno </p><p style="display:inline" id="placeLend">0</p><p style="display:inline"> výsledků.</p></div>
+                <form>
+                    <select name="order" class="order-box">
+                        <option value="default" selected="selected">Výchozí třízení</option>
+                        <option value="popular">Seřadit podle oblíbenosti</option>
+                        <option value="newest">Seřadit od nejnovějších</option>
+                        <option value="price_min">Seřadit podle ceny: od nejlevnějšího</option>
+                        <option value="price_max">Seřadit podle ceny: od nejdražšího</option>
+                    </select>
+                </form>
+            </div>
+	    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+            <div id ="computed-body">
+                <a class="flea quart category-10" onclick="seznamScript(this)" id="" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/jvc_dla-vs4500_02-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Projektory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">14 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-1" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/newtec_cambio-16_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">60 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-3" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/novasonar-gk-30-mini_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Neviditelné reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">15 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/zonar-dcla100_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Zesilovače</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">10 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-4" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/zonar-dlouhy-smerovy-reproduktor-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Směrové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">7 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/halcro-ec800_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>DVD přehrávače</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">1 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/symbio-oblak_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Svítidla</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">7 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-8" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/symbio-beta_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Regálové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/symbio-samurai_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Podlahové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-6" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/newtec_cono-pendo-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Stropní reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">36 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-5" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/newtec_cono-solo-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Nástěnné reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">22 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-2" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/symbio-alfa_08-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Designové reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">27 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/symbio-kotrmelec_02-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Designové doplňky</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-8" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/speakerguard-psp-23i-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Příslušenství pro reproduktory</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">14 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-9" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/newtec_subwoofer-wifi-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Subwoofery</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">5 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/invisibass-II-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Neviditelné subwoofery</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">4 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category-12" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/rti_licence_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>RTI</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">12 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/rti_t3x_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Dálková ovládání</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/rti_cx7_01-570x570.jpg" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Ovládací panely</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">6 item(s)</h5>
+                    </div>
+                </a>
+                <a class="flea quart category--" onclick="seznamScript(this)" href="#">
+                    <div class="">
+                        <img src="media/grafika/pics/products/znacky_obrazek_optrocon-570x570.png" style="width:100%">
+                    </div>
+                    <div class="flea-h">
+                        <div style="margin: 0px; margin-top:12px; line-height: 1em; height:30px; padding-bottom: px;htgray; box-shadow: 1px 12px 16px -11px darkslateblue;"><p>Kabely</p></div>
+                        <h5 style="margin: 0px; height:34px; padding-top:8px;">11 item(s)</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="side"></div>
+    </div>
+    
+    <div id="ix-footer" style="width: 100%; height: auto; background-color: #101030"></div>
+    <div id="this_page" style="display: none; height: 0px; width: 0px">Produkty</div>
+    <div id="catalog" style="display: none"></div>
+    <div id="catalog-main" style="display: none">
+    
+    
+<script src="responsive.js"></script>
+<script src="search_script.js"></script>
+<script src="seznamLst.js"></script>
+
+<script>
+    function givePadding(){
+        var a = document.getElementsByClassName("flea");
+        var b = a.length;
+        for(var i=0; i<b; i++){
+            var c = a[i].firstElementChild;
+            var d = c.firstElementChild;
+            var e = d.clientHeight;
+            var f = document.getElementById("header").clientWidth;
+            var g = document.getElementsByClassName("flea");
+           if (f<2000){
+                g[i].classList.remove("quart");
+                g[i].classList.add("half");
+            } else{g[i].classList.add("quart");g[i].classList.remove("half");}
+            if(e>26){
+                d.style.position="relative";
+                d.style.bottom="0px";
+            } else{
+                d.style.position="inherit";
+                d.style.bottom="0px";}
+        }
+        
+    }
+</script>
+<script>
+    $("#catalog").load("catalog-body.html");
+    $("#catalog-main").load("catalog-main.html");
+</script>
+</body>
+</html>

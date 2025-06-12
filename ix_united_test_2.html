@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Produkty">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link rel="import" href="header.html">
+    <link rel="import" href="header-small.html">
+    <link rel="import" href="catalog-body.html">
+    <link rel="import" href="catalog-main.html">
+    <link rel="import" href="catalog-product-skelton.html">
+    <link rel="import" href="categories.html">
+    <link rel="import" href="product-list.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="airtable/airtable.browser.js"></script>
+    <script src="airScript.js"></script>
+     
+    <style>
+        body{
+            width:100%;
+            height:100%;
+            margin:0px;
+            padding:0px;
+            position: absolute;
+            top:0px;
+            font-family: 'Exo', sans-serif;
+        }
+        /*.flea {
+            height: 375px;
+            margin: 2% 1%;
+            text-align: center;
+            display: inline-block;
+            margin-bottom: 130px!important;
+            border: none!important;
+            font-size:26px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }*/
+        //.half{width:44%;}
+        ///.quart{width:22%;}
+        .flea-h {
+            background-image: linear-gradient(white,lightgray);
+            box-shadow: 10px 20px 5px #888888;
+        }
+        .side-line {
+            background-size: 50px 1200px!important;
+        }
+        .h5 {
+            margin-top: 8px;
+            height:45px;
+            padding-top:8px;
+        }
+        #setts{display:none};
+    </style>
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous">
+    </script>
+    <script> 
+        
+    </script>
+</head> <!--requireTable('katalog', null, 10)   ||   requireTable('category')   ||   requireTable('parent') -->
+<body style="width:100%" onload="givePadding(); winWidth(); " onresize="loadOn(); winWidth()">
+    <div id="header"><p style="display:none">Produkty</p></div>
+    <div class="no-dph">Všechny ceny jsou uvedeny bez DPH</div>
+    <div id="side-dvid" style="padding-top: 0px!important">
+        <div id="place" style="font-size: 19px; font-weight: 100; padding: 32px; margin-bottom: 200px; padding-top: 0px">
+            <div id="setts">
+                <div style="margin:15px"><p style="display:inline">Zobrazeno </p><p style="display:inline" id="placeLend">0</p><p style="display:inline"> výsledků.</p></div>
+                <form>
+                    <select name="order" class="order-box">
+                        <option value="default" selected="selected">Výchozí třízení</option>
+                        <option value="popular">Seřadit podle oblíbenosti</option>
+                        <option value="newest">Seřadit od nejnovějších</option>
+                        <option value="price_min">Seřadit podle ceny: od nejlevnějšího</option>
+                        <option value="price_max">Seřadit podle ceny: od nejdražšího</option>
+                    </select>
+                </form>
+            </div>
+	    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>            
+            
+            <!--/*      Katalog body       */-->
+            <div id="computed-body"></div>
+            
+            
+        </div>
+        <div id="side"></div>
+    </div>
+    
+    <div id="ix-footer" style="width: 100%; height: auto; background-color: #101030"></div>
+    <div id="this_page" style="display: none; height: 0px; width: 0px">Produkty</div>
+    <div id="catalog" style="display: none"></div>
+    <div id="catalog-main" style="display: none">
+    
+    
+<script src="responsive.js"></script>
+<script src="search_script.js"></script>
+<script src="seznamLst.js"></script>
+
+<script>
+    function givePadding(){
+        var a = document.getElementsByClassName("flea");
+        var b = a.length;
+        for(var i=0; i<b; i++){
+            var c = a[i].firstElementChild;
+            var d = c.firstElementChild;
+            var e = d.clientHeight;
+            var f = document.getElementById("header").clientWidth;
+            var g = document.getElementsByClassName("flea");
+           if (f<2000){
+                g[i].classList.remove("quart");
+                g[i].classList.add("half");
+            } else{g[i].classList.add("quart");g[i].classList.remove("half");}
+            if(e>26){
+                d.style.position="relative";
+                d.style.bottom="0px";
+            } else{
+                d.style.position="inherit";
+                d.style.bottom="0px";}
+        }
+        
+    }
+</script>
+<!--script>
+    $("#catalog").load("catalog-body.html");
+    $("#catalog-main").load("catalog-main.html");
+</script-->
+</body>
+</html>

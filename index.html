@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="D6-XoCOrgqEb8bmdv_3KrOG1kTlMZuBl2HZ4tHY_iLw" />
+    <link href="https://fonts.googleapis.com/css?family=Exo:500&display=swap" rel="stylesheet">
+    <link rel="import" href="ix-header.html">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="ix-style.css">
+    <link rel="import" href="ix-header-small.html">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script src="p5/p5.min.js"></script>
+    <style>
+        video  {
+            width: 60%;
+            margin-left: 20%;
+            position: relative;
+            top: -170px;
+        }
+        .shape-loop {
+            position: relative;
+            z-index: -999;
+            background: black;
+            overflow: hidden;
+            height: 1093px;
+        }
+        nav {
+            position: relative;
+            height: 40px;
+            font-size: 0;
+        }
+        nav a {
+            line-height: 50px;
+            height: 165%;
+            font-family: 'Exo', sans-serif;
+            font-size: 31px;
+            font-weight: 100;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+        nav .animation {
+            position: absolute;
+            height: 2px;
+            bottom: -5px;
+            z-index: 0;
+            transition: all .5s ease 0s;
+            border-radius: 8px;
+        }
+        nav a:nth-child(1) {
+            width: 136px;
+        }
+        nav a:nth-child(2) {
+            width: 153px;
+        }
+        nav a:nth-child(3) {
+            width: 202px;
+        }
+        nav a:nth-child(4) {
+            width: 210px;
+        }
+        nav a:nth-child(5) {
+            width: 166px;
+        }
+        nav a:nth-child(6) {
+            width: 197px;
+        }
+        nav .start-home, a:nth-child(1):hover~.animation {
+            width: 136px;
+            left: -6;
+            background-color: #3498db;
+        }
+        nav .start-about, a:nth-child(2):hover~.animation {
+            width: 153px;
+            left: 132px;
+            background-color: #e74c3c;
+        }
+        nav .start-blog, a:nth-child(3):hover~.animation {
+            width: 202px;
+            left: 285px;
+            background-color: #1abc9c;
+        }
+        nav .start-portefolio, a:nth-child(4):hover~.animation {
+            width: 210px;
+            left: 487px;
+            background-color: #9b59b6;
+        }
+        nav .start-contact, a:nth-child(5):hover~.animation {
+            width: 166px;
+            left: 697px;
+            background-color: #cccc33;
+        }
+        nav .start-contact, a:nth-child(6):hover~.animation {
+            width: 197px;
+            left: 861px;
+            background-color: #e67e22;
+        }
+        @media only screen and (min-width: 500px) and (orientation: landscape) {
+            #content-box-2 {
+                padding-top: 5%;
+                top: 34%;
+            }
+            #content-box-2 > .text-1-2 {
+                margin-top: 29px!important;
+            }
+            #content-box-1 .header {
+                margin: 69px 0px 108px 40px;
+            }
+            #content-box-1 {
+                width: 74%;
+            }
+            #content-box-3 {
+                top: 31%;
+                text-align: right;
+                text-align: -webkit-right;
+                width: 77%;
+            }
+        }
+            .boton {
+            width: 200px;
+            height: 50px;
+            margin: 5px;
+            display: inline-block;
+            position: relative;
+            zoom: 1.6;
+    }
+    
+    .botontext {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+        line-height: 50px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    
+    .twist {
+        display: block;
+        height: 100%;
+        width: 53px;
+        position: relative;
+        float: left;
+        margin-left: -4px;
+    }
+    
+    .twist:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #80d0af;
+        bottom: 100%;
+        position: absolute;
+        transform-origin: center bottom 0px; 
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, -0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .twist:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        height: 100%;
+        background: #48a4bf;
+        transform-origin: center top 0px;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, -0.003, 
+                            0, -50, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .twist:before {
+        background: #fff;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, 0.003, 
+                            0, 50, 0, 1);
+    }
+    
+    .boton:hover .twist:after {
+        background: #dedae1;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, 0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+    }
+
+    .boton .twist:nth-of-type(1) {
+        margin-left: 0;
+    }
+    
+    .boton .twist:nth-of-type(1):before,
+    .boton .twist:nth-of-type(1):after {
+        transition-delay: 0s;
+    }
+    
+    .boton .twist:nth-of-type(2):before,
+    .boton .twist:nth-of-type(2):after {
+        transition-delay: 0.1s;
+    }
+    
+    .boton .twist:nth-of-type(3):before,
+    .boton .twist:nth-of-type(3):after {
+        transition-delay: 0.2s;
+    }
+    
+    .boton .twist:nth-of-type(4):before,
+    .boton .twist:nth-of-type(4):after {
+        transition-delay: 0.3s;
+    }
+    
+    #content-box-3 .twist {left:-50px}
+    
+    .boton .botontext:nth-of-type(1) {
+        color: #3d3b40;
+        bottom: 100%;
+        transform-origin: center bottom 0px; 
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, -0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .botontext:nth-of-type(1) {
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, 0.003, 
+                            0, 50, 0, 1);
+    }
+    
+    .boton .botontext:nth-of-type(2) {
+        color: #fff;
+        top: 100%;
+        transform-origin: center top 0px;
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 1, 0, 0, 
+                            0, 0, 1, -0.003, 
+                            0, -50, 0, 1);
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    
+    .boton:hover .botontext:nth-of-type(2) {
+        transform: matrix3d(1, 0, 0, 0, 
+                            0, 0, -1, 0.003, 
+                            0, 1, 0, 0, 
+                            0, 0, 0, 1);
+    }
+
+    /*MENU*/
+    
+    .square {
+        border: 1px solid #9f7f5e;
+        height: 26px;
+        width: 26px;
+        display: block;
+        margin: 40px auto;
+        transform: rotate(45deg);
+        overflow: hidden;
+        
+-webkit-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+   -moz-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+     -o-transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); 
+        transition: all 500ms cubic-bezier(0.970, 0.000, 0.395, 0.995); /* custom */
+    }
+    </style>
+</head>
+    
+<body style="width:100%" onload="loadOn(); myFunction(); respOn()" onresize='respOn()'> 
+  
+    <div id="slider" style="background-image: url(media/grafika/pics/slider_invisibass.jpg); height: 120%; background-size: cover">
+        <div id="cover" style="display: flex">
+            <div style="width:32%; height: 9.5%; opacity: 1">
+                <div id="ix-logo" style="background-image: url(media/grafika/pics/Favicon_MT-Distributing_300px.png); background-repeat: no-repeat; margin-top:91px; margin-left: 30%; height: 100%; width: 100%; background-size: contain; display: inline-block; transition: 2s;"></div>
+            </div>
+            <div style="width:66%; height: 7%; display: flex; justify-content: flex-end;">
+                <div id="ix-header" style="display: inline; z-index: 12; padding-right: 30px"></div>
+            </div>
+            
+            
+        </div>
+        <div id="content-box-1" class="visible">
+                    
+            <a href="products_cg.html#Neviditelne_reproduktory" class="boton"><div class="botontext">Neviditelné reproduktory</div><div class="botontext">Neviditelné reproduktory</div></a>
+            <a href="products_cg.html#Subwoofery" class="boton"><div class="botontext">Subwoofery</div><div class="botontext">Subwoofery</div></a>
+            <div class="header">
+                <h1 id="id_1_header">Neviditelné</br>reproduktory a subwoofery</h1>                        
+            </div>
+            <div class="favicon no-favicon" style="background-image: url(media/grafika/pics/Favicon_MT-Distributing_300px_bw.png); background-size: cover; float: right;"></div>
+        </div>
+        <div id="content-box-2" class="hidden removed">
+            <div class="favicon no-favicon" style="background-image: url(media/grafika/pics/Favicon_MT-Distributing_300px_bw.png); background-size: cover"></div>
+            <div class="header" style="margin-top:150px">
+                <h1 id="id_1_header">Design and Sound</h1>
+            </div>
+            <a href="products_cg.html#Designove_reproduktory" class="boton"><div class="botontext">Designové reproduktory</div><div class="botontext">Designové reproduktory</div></a>
+            <a href="products_cg.html#Designove_doplnky" class="boton"><div class="botontext">Designové doplňky</div><div class="botontext">Designové doplňky</div></a>
+
+                    
+        </div>
+        <div id="content-box-3" class="hidden removed">
+            <div class="favicon no-favicon" style="background-image: url(media/grafika/pics/Favicon_MT-Distributing_300px_bw.png); background-size: cover"></div>
+            <div class="header" style="height: 0%; min-height: 200px">
+                <h1 id="id_1_header" style="margin-top:0px!important; margin-bottom: 40px!important;">Nepřekonatelná ostrost</h1>                        
+            </div>
+            <a href="products_by.html#JVC" class="boton"><div class="botontext">Projektory JVC Kenwood</div><div class="botontext">Projektory JVC Kenwood</div></a>
+                    
+                    
+        </div>
+        
+    <div class="shape-loop"><video muted="" playsinline="" autoplay="" loop="" data-prllx-delta=".4" data-path="https://www.mstq.io/wp-content/themes/theme/library/videos/">
+				<source src="https://www.mstq.io/wp-content/themes/theme/library/videos/A.webm" type="video/webm">
+				<source src="https://www.mstq.io/wp-content/themes/theme/library/videos/A.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="ix-footer" style="width: 100%; height: auto; background-color: #000013"></div>
+    <div style="height: 90px"><p style="width:77%; margin: auto; padding-top:25px; font-size: 23px">2019 ©. Uvedené ceny jsou bez DPH.</p></div>
+
+    
+
+<script>
+   if(window.innerWidth<1000){
+       document.getElementById("slider").style.height="120%";
+        
+    }
+    function logoChange(x){
+        document.getElementById("ix-logo").style.backgroundImage="url(media/grafika/pics/Favicon_MT-Distributing_300px.png)";
+    }
+    function logoBack(x){
+        document.getElementById("ix-logo").style.backgroundImage="url(media/grafika/pics/Favicon_MT-Distributing_300px_bw.png)";
+    }
+</script>
+    
+<script>
+$(window).scroll(function (event) {
+    if($(window).scrollTop()>600 && $(window).scrollTop()<1018){
+    $('.footer-sq').css({"position": "relative","bottom": 2400 - 2.4*($(window).scrollTop())});
+    $('#scrollable > .footer-sq').css({"opacity": ($(window).scrollTop()/1200)});
+    }
+});
+     
+</script>    
+<script>
+$(window).ready(function(){
+
+    $(".boton").append('<span class="twist"></span><span class="twist"></span><span class="twist"></span><span class="twist"></span>');
+});   
+</script>   
+
+<script src="index-slide-timer.js"></script>  
+<script src="myTogg.js"></script>
+<script src="responsive.js"></script>
+
+
+</body>
+</html>
